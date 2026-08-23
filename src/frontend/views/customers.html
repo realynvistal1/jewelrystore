@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lustre Jewelry Customers</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/dashboard-shell.css" />
+  <link rel="stylesheet" href="/css/customers-page.css" />
+</head>
+<body class="dashboard-mode">
+  <div class="dashboard-app">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <p class="eyebrow">Lustre Jewelry</p>
+        <h2>Admin Panel</h2>
+        <p id="welcomeMessage" class="welcome-message">Signed in</p>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Module Navigation">
+        <a class="sidebar-link" href="/dashboard">
+          <span class="sidebar-link-icon" aria-hidden="true">&#9670;</span>
+          <span class="sidebar-link-copy">
+            <strong>Dashboard</strong>
+            <small>Overview and analytics</small>
+          </span>
+        </a>
+        <a class="sidebar-link active" href="/customers">
+          <span class="sidebar-link-icon" aria-hidden="true">&#9679;</span>
+          <span class="sidebar-link-copy">
+            <strong>Customers</strong>
+            <small>Profiles and contacts</small>
+          </span>
+        </a>
+        <a class="sidebar-link" href="/suppliers">
+          <span class="sidebar-link-icon" aria-hidden="true">&#9632;</span>
+          <span class="sidebar-link-copy">
+            <strong>Suppliers</strong>
+            <small>Vendors and sourcing</small>
+          </span>
+        </a>
+        <a class="sidebar-link" href="/inventory">
+          <span class="sidebar-link-icon" aria-hidden="true">&#9651;</span>
+          <span class="sidebar-link-copy">
+            <strong>Inventory</strong>
+            <small>Stock and products</small>
+          </span>
+        </a>
+        <a class="sidebar-link" href="/sales">
+          <span class="sidebar-link-icon" aria-hidden="true">&#9640;</span>
+          <span class="sidebar-link-copy">
+            <strong>Sales</strong>
+            <small>Transactions and totals</small>
+          </span>
+        </a>
+      </nav>
+
+      <button id="logoutButton" class="ghost-button sidebar-logout" type="button">Logout</button>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <p class="eyebrow">Customers</p>
+        <h1 class="dashboard-title">Customers Module</h1>
+        <p class="section-text">
+          See your registered customer information from the customers table.
+        </p>
+      </header>
+
+      <section class="dashboard-section">
+        <div id="moduleContent" class="module-host"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/js/pages/customers.js"></script>
+</body>
+</html>

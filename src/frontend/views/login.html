@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lustre Jewelry Login</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/login-page.css" />
+</head>
+<body class="auth-mode">
+  <header class="auth-screen">
+    <section class="login-shell" aria-labelledby="loginTitle">
+      <section class="login-copy-card">
+        <div class="login-copy-overlay">
+          <p class="login-brand">Lustre Jewelry</p>
+          <h1 id="loginTitle">Jewelry Store</h1>
+        </div>
+      </section>
+
+      <section class="login-panel">
+        <h2>Login</h2>
+        <form id="loginForm" class="login-form">
+          <label class="input-group" for="username">
+            <span>Username</span>
+            <input id="username" name="username" type="text" placeholder="admin" required />
+          </label>
+          <label class="input-group" for="password">
+            <span>Password</span>
+            <input id="password" name="password" type="password" placeholder="Enter your password" required />
+          </label>
+          <button id="forgotPasswordButton" class="forgot-password-button" type="button">
+            Forgot password?
+          </button>
+          <button type="submit" class="cta-button">Login</button>
+          <p id="loginMessage" class="login-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </section>
+  </header>
+
+  <script type="module" src="/js/pages/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+:root {
+  --bg: #fff6fb;
+  --panel: rgba(255, 255, 255, 0.92);
+  --text: #4b2740;
+  --muted: #87657a;
+  --accent: #f08cb4;
+  --accent-dark: #d65c91;
+  --border: rgba(214, 119, 165, 0.2);
+  --sidebar: #fff0f7;
+  --sidebar-soft: #f7d7e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255, 199, 224, 0.42), transparent 35%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: clamp(2.7rem, 6vw, 4.8rem);
+  line-height: 1.05;
+}
+
+h2 {
+  margin: 0;
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.section-text,
+.welcome-message {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cta-button,
+.ghost-button,
+.sidebar-link {
+  border-radius: 16px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.cta-button:hover,
+.ghost-button:hover,
+.sidebar-link:hover {
+  transform: translateY(-2px);
+}
+
+.ghost-button {
+  border: 1px solid rgba(124, 88, 59, 0.24);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: clamp(2.3rem, 8vw, 4rem);
+  }
+}
