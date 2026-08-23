@@ -1,5 +1,9 @@
-import { fetchDashboardData } from "../modules/dashboard-api.js";
-import { renderEmptyModule, renderSalesModule } from "../modules/module-renderer.js";
+import { fetchSalesWorkspace } from "../modules/sales-api.js";
+import {
+  initializeSalesModule,
+  renderEmptyModule,
+  renderSalesModule
+} from "../modules/module-renderer.js";
 import { initializeProtectedPage } from "../modules/page-shell.js";
 
 initializeProtectedPage();
@@ -14,8 +18,9 @@ async function loadPage() {
   moduleContent.innerHTML = renderEmptyModule("Loading sales module...");
 
   try {
-    const result = await fetchDashboardData();
-    moduleContent.innerHTML = renderSalesModule(result.modules.salesReport);
+    const result = await fetchSalesWorkspace();
+    moduleContent.innerHTML = renderSalesModule(result);
+    initializeSalesModule();
   } catch (error) {
     moduleContent.innerHTML = renderEmptyModule(error.message || "Unable to load sales.");
   }

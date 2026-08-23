@@ -1,5 +1,9 @@
-import { fetchDashboardData } from "../modules/dashboard-api.js";
-import { renderEmptyModule, renderInventoryModule } from "../modules/module-renderer.js";
+import { fetchInventoryData } from "../modules/inventory-api.js";
+import {
+  initializeInventoryModule,
+  renderEmptyModule,
+  renderInventoryModule
+} from "../modules/module-renderer.js";
 import { initializeProtectedPage } from "../modules/page-shell.js";
 
 initializeProtectedPage();
@@ -14,8 +18,9 @@ async function loadPage() {
   moduleContent.innerHTML = renderEmptyModule("Loading inventory module...");
 
   try {
-    const result = await fetchDashboardData();
-    moduleContent.innerHTML = renderInventoryModule(result.modules.inventory);
+    const result = await fetchInventoryData();
+    moduleContent.innerHTML = renderInventoryModule(result.items);
+    initializeInventoryModule();
   } catch (error) {
     moduleContent.innerHTML = renderEmptyModule(error.message || "Unable to load inventory.");
   }

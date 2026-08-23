@@ -1,5 +1,9 @@
-import { fetchDashboardData } from "../modules/dashboard-api.js";
-import { renderEmptyModule, renderSuppliersModule } from "../modules/module-renderer.js";
+import { fetchSuppliersWorkspace } from "../modules/suppliers-api.js";
+import {
+  initializeSuppliersModule,
+  renderEmptyModule,
+  renderSuppliersModule
+} from "../modules/module-renderer.js";
 import { initializeProtectedPage } from "../modules/page-shell.js";
 
 initializeProtectedPage();
@@ -14,8 +18,9 @@ async function loadPage() {
   moduleContent.innerHTML = renderEmptyModule("Loading suppliers module...");
 
   try {
-    const result = await fetchDashboardData();
-    moduleContent.innerHTML = renderSuppliersModule(result.modules.suppliers);
+    const result = await fetchSuppliersWorkspace();
+    moduleContent.innerHTML = renderSuppliersModule(result);
+    initializeSuppliersModule();
   } catch (error) {
     moduleContent.innerHTML = renderEmptyModule(error.message || "Unable to load suppliers.");
   }

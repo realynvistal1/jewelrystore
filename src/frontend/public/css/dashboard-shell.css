@@ -12,12 +12,14 @@
     linear-gradient(180deg, #fff6fb 0%, #fbe8f2 100%);
   color: var(--text);
   padding: 30px 22px;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
   gap: 26px;
-  min-height: 100vh;
+  height: 100vh;
   position: sticky;
   top: 0;
+  align-self: start;
+  overflow-y: auto;
   border-right: 1px solid rgba(214, 119, 165, 0.14);
   box-shadow: 20px 0 48px rgba(219, 155, 184, 0.14);
 }
@@ -40,6 +42,14 @@
 .sidebar-nav {
   display: grid;
   gap: 12px;
+  align-content: start;
+  grid-auto-rows: max-content;
+  flex: 1;
+}
+
+.sidebar-brand,
+.sidebar-logout {
+  flex: 0 0 auto;
 }
 
 .sidebar-link {
@@ -49,8 +59,8 @@
   justify-items: start;
   gap: 16px;
   width: 100%;
-  min-height: 72px;
-  padding: 16px 18px;
+  min-height: 64px;
+  padding: 14px 18px;
   border: 1px solid rgba(214, 119, 165, 0.12);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.78);
@@ -136,8 +146,9 @@
   }
 
   .sidebar {
-    min-height: auto;
+    height: auto;
     position: static;
+    overflow: visible;
     box-shadow: none;
   }
 
@@ -157,8 +168,8 @@
 
   .sidebar-link {
     grid-template-columns: 38px minmax(0, 1fr);
-    min-height: 70px;
-    padding: 14px 15px;
+    min-height: 60px;
+    padding: 12px 15px;
   }
 
   .sidebar-brand h2 {
